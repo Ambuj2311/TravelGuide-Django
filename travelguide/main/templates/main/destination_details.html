@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="destination-detail py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="mb-4">{{ destination.name }}</h1>
+                <img src="{{ destination.image.url }}" alt="{{ destination.name }}" class="img-fluid mb-4 rounded">
+                <div class="destination-info mb-4">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="info-box bg-light p-3 rounded">
+                                <h5><i class="fas fa-rupee-sign text-red me-2"></i> Price</h5>
+                                <p class="mb-0">{{ destination.price }} per person</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="info-box bg-light p-3 rounded">
+                                <h5><i class="fas fa-clock text-red me-2"></i> Duration</h5>
+                                <p class="mb-0">{{ destination.duration }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-description mb-5">
+                    <h4 class="mb-3">About {{ destination.name }}</h4>
+                    <p>{{ destination.description }}</p>
+                </div>
+                <div class="itinerary mb-5">
+                    <h4 class="mb-3">Tour Itinerary</h4>
+                    <div class="accordion" id="itineraryAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    Day 1: Arrival
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#itineraryAccordion">
+                                <div class="accordion-body">
+                                    <p>Arrive at the destination airport/station. Our representative will meet you and transfer you to the hotel. Check-in and rest of the day at leisure.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Day 2: Sightseeing
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#itineraryAccordion">
+                                <div class="accordion-body">
+                                    <p>After breakfast, proceed for full day sightseeing covering all major attractions of the destination. Return to hotel in the evening.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Day 3: Departure
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#itineraryAccordion">
+                                <div class="accordion-body">
+                                    <p>After breakfast, check-out from the hotel and transfer to airport/station for your onward journey.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="booking-card card shadow sticky-top" style="top: 20px;">
+                    <div class="card-header bg-red text-white">
+                        <h4 class="mb-0">Book This Tour</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Travel Date</label>
+                                <input type="date" class="form-control" id="date" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="persons" class="form-label">Number of Persons</label>
+                                <input type="number" class="form-control" id="persons" min="1" value="1" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
