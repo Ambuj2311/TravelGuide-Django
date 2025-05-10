@@ -45,7 +45,7 @@ class Command(BaseCommand):
             }
         ]
 
-        # Create slider images
+        # slider images
         slider_images = [
             {
                 'title': 'Discover Incredible India',
@@ -63,32 +63,32 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.SUCCESS('Creating sample data...'))
         
-        # Create destinations (images need to be added manually in admin)
+        # destinations 
         for dest in destinations:
             Destination.objects.create(**dest)
         
-        # Create slider images (images need to be added manually in admin)
+        # slider images
         for slide in slider_images:
             SliderImage.objects.create(**slide)
             
         self.stdout.write(self.style.SUCCESS('Successfully created sample data!'))
 
 
-        # Create tags
+        # tags
         beach_tag = Tag.objects.create(name='beach')
         luxury_tag = Tag.objects.create(name='luxury')
         adventure_tag = Tag.objects.create(name='adventure')
         family_tag = Tag.objects.create(name='family')
         honeymoon_tag = Tag.objects.create(name='honeymoon')
         
-        # Create amenities
+        # amenities
         wifi = Amenity.objects.create(name='Free WiFi', icon='fa-wifi')
         pool = Amenity.objects.create(name='Swimming Pool', icon='fa-swimming-pool')
         spa = Amenity.objects.create(name='Spa', icon='fa-spa')
         restaurant = Amenity.objects.create(name='Restaurant', icon='fa-utensils')
         ac = Amenity.objects.create(name='Air Conditioning', icon='fa-snowflake')
         
-        # Create destinations
+        # destinations
         goa = Destination.objects.create(
             name='Goa Beaches',
             description='Explore the beautiful beaches of Goa with golden sands and clear blue waters. Perfect for relaxation and water sports.',

@@ -6,7 +6,6 @@ def home(request):
     destinations = Destination.objects.all()
     slider_images = SliderImage.objects.all()
     
-    # Search functionality
     search_query = request.GET.get('search', '')
     if search_query:
         destinations = destinations.filter(
