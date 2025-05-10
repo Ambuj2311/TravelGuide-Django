@@ -374,6 +374,12 @@ footer ul li a:hover {
     .carousel-caption p {
         font-size: 14px;
     }
+    .contact-info{
+text-align: center;
+    }
+    .rounded{
+        text-align: center;
+    }
 }
 
 .search-results {
